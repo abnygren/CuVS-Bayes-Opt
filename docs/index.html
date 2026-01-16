@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cu₃VS₄ Synthesis Optimizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated background -->
+    <div class="bg-gradient"></div>
+    <div class="bg-grid"></div>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">◈</span>
+                <div class="logo-text">
+                    <h1>Cu<sub>3</sub>VS<sub>4</sub></h1>
+                    <span class="tagline">Self-Validating Bayesian Optimization</span>
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="#dashboard" class="nav-link active">Dashboard</a>
+                <a href="#recommendations" class="nav-link">Recommendations</a>
+                <a href="#experiments" class="nav-link">Experiments</a>
+                <a href="#predict" class="nav-link">Predict</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="main">
+        <!-- Hero Stats Section -->
+        <section id="dashboard" class="section hero-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">⬡</div>
+                    <div class="stat-value" id="total-experiments">--</div>
+                    <div class="stat-label">Total Experiments</div>
+                </div>
+                <div class="stat-card accent">
+                    <div class="stat-icon">◇</div>
+                    <div class="stat-value" id="pending-count">--</div>
+                    <div class="stat-label">Pending Recommendations</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">✓</div>
+                    <div class="stat-value" id="completed-count">--</div>
+                    <div class="stat-label">Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">◈</div>
+                    <div class="stat-value" id="model-accuracy">--</div>
+                    <div class="stat-label">Model Sources</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommendations Section -->
+        <section id="recommendations" class="section">
+            <div class="section-header">
+                <h2>Recommendations</h2>
+                <p class="section-subtitle">Model-generated synthesis conditions awaiting validation</p>
+            </div>
+            
+            <!-- Filter tabs -->
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="pending">
+                    Pending <span class="badge" id="pending-badge">0</span>
+                </button>
+                <button class="filter-tab" data-filter="completed">
+                    Completed <span class="badge" id="completed-badge">0</span>
+                </button>
+                <button class="filter-tab" data-filter="skipped">
+                    Skipped <span class="badge" id="skipped-badge">0</span>
+                </button>
+                <button class="filter-tab" data-filter="all">All</button>
+            </div>
+
+            <!-- Recommendations list -->
+            <div class="recommendations-container" id="recommendations-list">
+                <div class="loading">Loading recommendations...</div>
+            </div>
+        </section>
+
+        <!-- Experiments Section -->
+        <section id="experiments" class="section">
+            <div class="section-header">
+                <h2>Experiment History</h2>
+                <p class="section-subtitle">Complete dataset of Cu₃VS₄ synthesis experiments</p>
+            </div>
+
+            <!-- Source filter -->
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-source="all">All Sources</button>
+                <button class="filter-tab" data-source="imported">Imported</button>
+                <button class="filter-tab" data-source="recommendation">From Model</button>
+                <button class="filter-tab" data-source="manual">Manual</button>
+            </div>
+
+            <!-- Experiments table -->
+            <div class="table-container">
+                <table class="data-table" id="experiments-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Temp (°C)</th>
+                            <th>Time (min)</th>
+                            <th>VOacac</th>
+                            <th>DDT</th>
+                            <th>OAm</th>
+                            <th>Size (nm)</th>
+                            <th>GSD</th>
+                            <th>Squareness</th>
+                            <th>Source</th>
+                        </tr>
+                    </thead>
+                    <tbody id="experiments-tbody">
+                        <tr><td colspan="10" class="loading">Loading experiments...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Prediction Section -->
+        <section id="predict" class="section">
+            <div class="section-header">
+                <h2>Plan New Experiment</h2>
+                <p class="section-subtitle">Enter synthesis conditions to estimate outcomes</p>
+            </div>
+
+            <div class="predict-grid">
+                <!-- Input Form -->
+                <div class="predict-form-container">
+                    <form id="predict-form" class="predict-form">
+                        <div class="form-group">
+                            <label for="input-temp">Temperature (°C)</label>
+                            <input type="number" id="input-temp" name="Temp" 
+                                   min="220" max="300" step="1" value="260" required>
+                            <span class="input-hint">Range: 220-300°C</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="input-time">Time (min)</label>
+                            <input type="number" id="input-time" name="Time" 
+                                   min="5" max="120" step="1" value="30" required>
+                            <span class="input-hint">Range: 5-120 min</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="input-voacac">V(acac)₃ (mmol)</label>
+                            <input type="number" id="input-voacac" name="VOacac" 
+                                   min="0.1" max="1.0" step="0.01" value="0.4" required>
+                            <span class="input-hint">Range: 0.1-1.0 mmol</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="input-ddt">DDT (mL)</label>
+                            <input type="number" id="input-ddt" name="DDT" 
+                                   min="0.5" max="4.0" step="0.1" value="2.0" required>
+                            <span class="input-hint">Range: 0.5-4.0 mL</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="input-oam">OAm (mL)</label>
+                            <input type="number" id="input-oam" name="OAm" 
+                                   min="1.0" max="8.0" step="0.1" value="4.0" required>
+                            <span class="input-hint">Range: 1.0-8.0 mL</span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            <span class="btn-icon">◈</span>
+                            Copy to Notebook
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Output display -->
+                <div class="predict-output">
+                    <div class="output-card">
+                        <h3>Notebook Code</h3>
+                        <p class="output-hint">Copy this code to run predictions in your Jupyter notebook:</p>
+                        <pre class="code-block" id="notebook-code">
+# Enter conditions and click "Copy to Notebook"
+# Then paste this code in your notebook:
+
+optimizer.predict_from_conditions(
+    Temp=260,
+    Time=30,
+    VOacac=0.4,
+    DDT=2.0,
+    OAm=4.0
+)</pre>
+                        <button class="btn btn-secondary" id="copy-code-btn">
+                            <span class="btn-icon">⎘</span>
+                            Copy Code
+                        </button>
+                    </div>
+
+                    <div class="info-card">
+                        <h4>Why Notebook?</h4>
+                        <p>The Gaussian Process models require Python's scikit-learn library to make predictions. For accurate results, run the prediction code in your <code>Cu3VS4_SelfValidating_BO.ipynb</code> notebook.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology Link -->
+        <section class="section methodology-teaser">
+            <div class="methodology-content">
+                <h3>How It Works</h3>
+                <p>This system uses Gaussian Process regression with error correction to predict nanoparticle properties. Unlike traditional Bayesian optimization, it learns from prediction errors to improve future estimates.</p>
+                <a href="methodology.html" class="btn btn-outline">Learn About the Methodology →</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Cu₃VS₄ Self-Validating Bayesian Optimization System</p>
+            <p class="footer-credit">Built for nanoparticle synthesis research</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

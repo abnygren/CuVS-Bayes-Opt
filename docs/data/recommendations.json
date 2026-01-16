@@ -1,0 +1,191 @@
+{
+  "next_id": 7,
+  "recommendations": [
+    {
+      "rec_id": "REC_001",
+      "status": "skipped",
+      "rank": 1,
+      "timestamp": "2026-01-16T12:49:33.647808",
+      "target": {
+        "size": 20.0,
+        "tolerance": 2.5
+      },
+      "conditions": {
+        "Temp": 286.146400841877,
+        "Time": 52.05122035246022,
+        "VOacac": 0.34274356475553425,
+        "DDT": 2.2021580564492984,
+        "OAm": 3.411584078723288
+      },
+      "predictions": {
+        "size_mu": 20.409856183705333,
+        "size_std": 2.4241594152990076,
+        "gsd_mu": 1.3633727272726661,
+        "gsd_std": 0.19401335714104653,
+        "sq_mu": 0.5461914722660206,
+        "sq_std": 0.05351368009088867,
+        "p_feasible": 0.6442922038955745
+      },
+      "actual_results": null,
+      "completed_timestamp": null,
+      "errors": null,
+      "skip_reason": "Superseded by new request for 20.0nm",
+      "skipped_timestamp": "2026-01-16T12:55:00.341334"
+    },
+    {
+      "rec_id": "REC_002",
+      "status": "skipped",
+      "rank": 2,
+      "timestamp": "2026-01-16T12:49:33.648529",
+      "target": {
+        "size": 20.0,
+        "tolerance": 2.5
+      },
+      "conditions": {
+        "Temp": 291.84480458608897,
+        "Time": 15.819700800409748,
+        "VOacac": 0.6041322145798897,
+        "DDT": 2.237973762111937,
+        "OAm": 5.72014274819724
+      },
+      "predictions": {
+        "size_mu": 20.877640051462105,
+        "size_std": 1.9408743621058022,
+        "gsd_mu": 1.3633727278597871,
+        "gsd_std": 0.19401335714104653,
+        "sq_mu": 0.5519865240472,
+        "sq_std": 0.05148863191107038,
+        "p_feasible": 0.4136954829184599
+      },
+      "actual_results": null,
+      "completed_timestamp": null,
+      "errors": null,
+      "skip_reason": "Superseded by new request for 20.0nm",
+      "skipped_timestamp": "2026-01-16T12:55:00.341977"
+    },
+    {
+      "rec_id": "REC_003",
+      "status": "skipped",
+      "rank": 1,
+      "timestamp": "2026-01-16T12:55:00.492748",
+      "target": {
+        "size": 20.0,
+        "tolerance": 2.5
+      },
+      "conditions": {
+        "Temp": 286.146400841877,
+        "Time": 52.05122035246022,
+        "VOacac": 0.34274356475553425,
+        "DDT": 2.2021580564492984,
+        "OAm": 3.411584078723288
+      },
+      "predictions": {
+        "size_mu": 20.409856183705333,
+        "size_std": 2.4241594152990076,
+        "gsd_mu": 1.3633727272726661,
+        "gsd_std": 0.19401335714104653,
+        "sq_mu": 0.5461914722660206,
+        "sq_std": 0.05351368009088867,
+        "p_feasible": 0.6442922038955745
+      },
+      "actual_results": null,
+      "completed_timestamp": null,
+      "errors": null,
+      "skip_reason": "Superseded by new request for 20.0nm",
+      "skipped_timestamp": "2026-01-16T12:55:53.396591"
+    },
+    {
+      "rec_id": "REC_004",
+      "status": "skipped",
+      "rank": 2,
+      "timestamp": "2026-01-16T12:55:00.493733",
+      "target": {
+        "size": 20.0,
+        "tolerance": 2.5
+      },
+      "conditions": {
+        "Temp": 291.84480458608897,
+        "Time": 15.819700800409748,
+        "VOacac": 0.6041322145798897,
+        "DDT": 2.237973762111937,
+        "OAm": 5.72014274819724
+      },
+      "predictions": {
+        "size_mu": 20.877640051462105,
+        "size_std": 1.9408743621058022,
+        "gsd_mu": 1.3633727278597871,
+        "gsd_std": 0.19401335714104653,
+        "sq_mu": 0.5519865240472,
+        "sq_std": 0.05148863191107038,
+        "p_feasible": 0.4136954829184599
+      },
+      "actual_results": null,
+      "completed_timestamp": null,
+      "errors": null,
+      "skip_reason": "Superseded by new request for 20.0nm",
+      "skipped_timestamp": "2026-01-16T12:55:53.397561"
+    },
+    {
+      "rec_id": "REC_005",
+      "status": "pending",
+      "rank": 1,
+      "timestamp": "2026-01-16T12:55:53.551188",
+      "target": {
+        "size": 20.0,
+        "tolerance": 2.5
+      },
+      "conditions": {
+        "Temp": 286.146400841877,
+        "Time": 52.05122035246022,
+        "VOacac": 0.34274356475553425,
+        "DDT": 2.2021580564492984,
+        "OAm": 3.411584078723288
+      },
+      "predictions": {
+        "size_mu": 20.409856183705333,
+        "size_std": 2.4241594152990076,
+        "gsd_mu": 1.3633727272726661,
+        "gsd_std": 0.19401335714104653,
+        "sq_mu": 0.5461914722660206,
+        "sq_std": 0.05351368009088867,
+        "p_feasible": 0.6442922038955745
+      },
+      "actual_results": null,
+      "completed_timestamp": null,
+      "errors": null,
+      "skip_reason": null,
+      "skipped_timestamp": null
+    },
+    {
+      "rec_id": "REC_006",
+      "status": "pending",
+      "rank": 2,
+      "timestamp": "2026-01-16T12:55:53.552101",
+      "target": {
+        "size": 20.0,
+        "tolerance": 2.5
+      },
+      "conditions": {
+        "Temp": 291.84480458608897,
+        "Time": 15.819700800409748,
+        "VOacac": 0.6041322145798897,
+        "DDT": 2.237973762111937,
+        "OAm": 5.72014274819724
+      },
+      "predictions": {
+        "size_mu": 20.877640051462105,
+        "size_std": 1.9408743621058022,
+        "gsd_mu": 1.3633727278597871,
+        "gsd_std": 0.19401335714104653,
+        "sq_mu": 0.5519865240472,
+        "sq_std": 0.05148863191107038,
+        "p_feasible": 0.4136954829184599
+      },
+      "actual_results": null,
+      "completed_timestamp": null,
+      "errors": null,
+      "skip_reason": null,
+      "skipped_timestamp": null
+    }
+  ]
+}
